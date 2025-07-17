@@ -7,7 +7,7 @@ WORKDIR /go/src/github.com/golang/example/hello
 # Build the project and send the output to /bin/HelloWorld 
 RUN go build -o /bin/HelloWorld
 
-FROM FROM public.ecr.aws/docker/library/golang:1.12-alpine
+FROM public.ecr.aws/docker/library/golang:1.12-alpine
 #Copy the build's output binary from the previous build container
 COPY --from=build /bin/HelloWorld /bin/HelloWorld
 ENTRYPOINT ["/bin/HelloWorld"]
