@@ -1,4 +1,4 @@
-FROM golang:1.12-alpine AS build
+FROM public.ecr.aws/docker/library/golang:1.12-alpine
 #Install git
 RUN apk add --no-cache git
 #Get the hello world package from a GitHub repository
