@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/go:1
+FROM public.ecr.aws/codebuild/amazonlinux2-x86_64-standard:4.0
 #Install git
 RUN apk add --no-cache git
 #Get the hello world package from a GitHub repository
