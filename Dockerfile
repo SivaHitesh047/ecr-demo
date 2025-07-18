@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/golang:1.12-alpine
+FROM public.ecr.aws/bitnami/golang:1.12
 #Install git
 RUN apk add --no-cache git
 #Get the hello world package from a GitHub repository
@@ -7,7 +7,7 @@ WORKDIR /go/src/github.com/golang/example/hello
 # Build the project and send the output to /bin/HelloWorld 
 RUN go build -o /bin/HelloWorld
 
-FROM public.ecr.aws/docker/library/golang:1.12-alpine
+FROM public.ecr.aws/bitnami/golang:1.12
 #Copy the build's output binary from the previous build container
 COPY --from=build /bin/HelloWorld /bin/HelloWorld
 ENTRYPOINT ["/bin/HelloWorld"]
