@@ -1,4 +1,4 @@
-FROM public.ecr.aws/bitnami/golang:1.12
+FROM public.ecr.aws/lambda/go:1
 #Install git
 RUN apk add --no-cache git
 #Get the hello world package from a GitHub repository
